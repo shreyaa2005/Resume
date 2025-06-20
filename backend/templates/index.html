@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CVSnip - Upload Resume</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700%7COpen+Sans&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png">
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #eef2f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      background-color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+      margin-right: 10px;
+    }
+
+    .brand h4 {
+      font-size: 26px;
+      margin: 0;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .link {
+      display: flex;
+      gap: 35px;
+    }
+
+    .link a {
+      text-decoration: none;
+      color: #000;
+      font-weight: 800;
+      transition: color 0.3s;
+    }
+
+    .link a:hover {
+      color: #6f42c1;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 60px 40px;
+    }
+
+    .left-box {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .right-box {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    .right-box img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      color: #333;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    p.subtitle {
+      font-size: 20px;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    input[type="file"] {
+      margin: 20px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #007bff;
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .left-box, .right-box {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+    }
+    footer {
+            text-align: center;
+            padding: 15px;
+            background:white;
+            color: #000;
+            margin-top: 50px;
+    }
+    .features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  width: 400px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media screen and (max-width: 850px) {
+  .features {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-box {
+    width: 90%;
+    max-width: 500px;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="brand">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="CV Logo">
+      <h4>CVSnip</h4>
+    </div>
+    <div class="link">
+      <a href="about tem.html">ABOUT</a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=skillifyy@gmail.com">CONTACT US</a>
+      <a href="login tem.html">LOG IN</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="left-box">
+      <h1>Upload Your Resume</h1>
+      <p class="subtitle"><b>CVSnip</b> helps you extract and analyze resume content effortlessly. Just upload your .docx or .txt resume to begin parsing!</p>
+      <input type="file" id="upload" accept=".docx,.txt" />
+      <br />
+      <button onclick="goToParse()">Parse Resume</button>
+    </div>
+
+    <div class="right-box">
+      <img src="https://static.wixstatic.com/media/180129_c4e66c9d40c3427bafa7c24ea241915b~mv2.png/v1/fill/w_525,h_378,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/resumes-templates.png" alt="Resume Templates">
+    </div>
+  </div>
+  <div class="features">
+        <div class="feature-box">
+          <h3>Upload and Instantly Improve Your Existing Resume</h3>
+          <p>
+            Already have a resume? Upload it to <strong>CVSnip</strong> and see it transformed instantly into a modern, well-structured format.
+          </p>
+        </div>
+        <div class="feature-box">
+          <h3>100% Free and Always Accessible</h3>
+          <p>
+            Unlike most platforms, <strong>CVSnip</strong> is completely free to use. No hidden fees, no watermarks, and no login hassles. Just clean, professional resumes—ready when you are.
+          </p>
+        </div>
+      </div>
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  <script>
+    function goToParse() {
+      const input = document.getElementById('upload');
+      if (!input.files.length) {
+        alert('Please select a resume file first!');
+        return;
+      }
+
+      const file = input.files[0];
+      const reader = new FileReader();
+
+      if (file.name.endsWith('.txt')) {
+        reader.onload = function (e) {
+          localStorage.setItem('resumeText', e.target.result);
+          window.location.href = 'Parse.html';
+        };
+        reader.readAsText(file);
+      } else if (file.name.endsWith('.docx')) {
+        reader.onload = function (e) {
+          mammoth.extractRawText({ arrayBuffer: e.target.result })
+            .then(function (result) {
+              localStorage.setItem('resumeText', result.value);
+              window.location.href = 'Parse.html';
+            })
+            .catch(function (err) {
+              alert('Error reading DOCX file');
+              console.error(err);
+            });
+        };
+        reader.readAsArrayBuffer(file);
+      } else {
+        alert('Unsupported file type. Please upload .txt or .docx');
+      }
+    }
+  </script>
+  <footer>
+        ©2025 CVsnip.All rights reserved.
+  </footer>
+</body>
+</html>
